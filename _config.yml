@@ -3,7 +3,7 @@ description: Статьи о разработке и технологиях
 # theme: daattali/beautiful-jekyll
 # plugins:
 #   - jekyll-remote-theme
-theme: daattali/beautiful-jekyll
+remote_theme: daattali/beautiful-jekyll
 
 author: Vladislav Dedov
 lang: ru
