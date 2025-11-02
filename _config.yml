@@ -1,9 +1,9 @@
 title: Пишу про IT
 description: Статьи о разработке и технологиях
-# theme: daattali/beautiful-jekyll
-# plugins:
-#   - jekyll-remote-theme
-remote_theme: daattali/beautiful-jekyll
+theme: daattali/beautiful-jekyll
+plugins:
+  - jekyll-remote-theme
+# remote_theme: daattali/beautiful-jekyll
 
 author: Vladislav Dedov
 lang: ru
