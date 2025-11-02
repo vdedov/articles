@@ -1,8 +1,7 @@
 name: Build and Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [ "main" ]
+  push: { branches: [ "main" ] }
   workflow_dispatch:
 
 permissions:
@@ -23,12 +22,11 @@ jobs:
         with:
           ruby-version: '3.2'
           bundler-cache: true
-      - name: Install Jekyll and deps
+      - name: Install deps
         run: |
-          gem install bundler
-          bundle init
-          bundle add jekyll jekyll-remote-theme jekyll-seo-tag jekyll-sitemap jekyll-feed kramdown-parser-gfm jekyll-paginate jekyll-archives jekyll-include-cache
-          bundle exec jekyll build --trace
+          bundle install --jobs 4 --retry 3
+      - name: Build site
+        run: bundle exec jekyll build --trace
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
