@@ -8,7 +8,7 @@ url: "https://vdedov.github.io"
 baseurl: ""                # для персонального сайта оставьте пустым
 # baseurl: "/your-blog"    # если это проектный сайт в подкаталоге
 
-theme: jekyll-theme-midnight
+theme: minima
 
 # Метаданные автора (для карточек, футера и SEO)
 author:
