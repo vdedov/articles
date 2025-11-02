@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Статьи о разработке и технологиях от Владислава Дедова">
+    <meta name="author" content="Владислав Дедов">
+    <title>Пишу про IT - Блог о разработке</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Пишу про IT</a>
+            <button class="mobile-menu-btn" aria-label="Menu" aria-expanded="false">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="about.html">Обо мне</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Статьи о разработке и технологиях</h1>
+            <p>Делюсь опытом, наблюдениями и решениями интересных задач</p>
+        </section>
+
+        <section class="articles-grid">
+            <a href="posts/go-context.html" class="article-card">
+                <h2>Управление временем жизни задач в Go с context</h2>
+                <div class="article-meta">
+                    <span>2 ноября 2025</span>
+                </div>
+                <p>В Go пакет context помогает ограничить время выполнения и отменять операции. Рассмотрим практические примеры использования context для управления горутинами и таймаутами.</p>
+                <div class="article-tags">
+                    <span class="tag">go</span>
+                    <span class="tag">context</span>
+                    <span class="tag">concurrency</span>
+                </div>
+            </a>
+
+            <a href="posts/hello-world.html" class="article-card">
+                <h2>Hello, world!</h2>
+                <div class="article-meta">
+                    <span>2 ноября 2025</span>
+                </div>
+                <p>Первый пост в блоге. Рассказываю о планах, темах которые буду освещать, и о том, почему решил начать вести блог.</p>
+                <div class="article-tags">
+                    <span class="tag">intro</span>
+                    <span class="tag">blog</span>
+                </div>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Владислав Дедов. Все права защищены.</p>
+        <p>Блог о разработке и технологиях</p>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
