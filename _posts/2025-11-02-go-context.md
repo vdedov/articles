@@ -31,7 +31,7 @@ func main() {
   case <-done:
     fmt.Println("ok")
   case <-ctx.Done():
-```
     fmt.Println("timeout:", ctx.Err())
   }
 }
+```
