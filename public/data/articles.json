@@ -1,0 +1,294 @@
+{
+  "articles": [
+    {
+      "id": "go-context",
+      "title": "Управление временем жизни задач в Go с context",
+      "date": "2025-11-02",
+      "dateFormatted": "2 ноября 2025",
+      "categories": ["Go", "Concurrency"],
+      "tags": ["go", "context", "timeout"],
+      "excerpt": "В Go пакет context помогает ограничить время выполнения и отменять операции. Рассмотрим практические примеры использования context для управления горутинами и таймаутами.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "go-channels",
+      "title": "Работа с каналами в Go",
+      "date": "2025-10-28",
+      "dateFormatted": "28 октября 2025",
+      "categories": ["Go", "Concurrency"],
+      "tags": ["go", "channels", "goroutines"],
+      "excerpt": "Каналы - основной механизм синхронизации в Go. Разбираем буферизованные и небуферизованные каналы, select и паттерны работы с ними.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "docker-optimization",
+      "title": "Оптимизация Docker образов для Go приложений",
+      "date": "2025-10-25",
+      "dateFormatted": "25 октября 2025",
+      "categories": ["DevOps", "Go"],
+      "tags": ["docker", "go", "optimization"],
+      "excerpt": "Как уменьшить размер Docker образов с Go приложениями с 1GB до 10MB. Multi-stage builds и статическая компиляция.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "microservices-patterns",
+      "title": "Паттерны проектирования микросервисов",
+      "date": "2025-10-20",
+      "dateFormatted": "20 октября 2025",
+      "categories": ["Architecture", "Microservices"],
+      "tags": ["architecture", "patterns", "microservices"],
+      "excerpt": "Circuit Breaker, Saga, API Gateway и другие паттерны для построения надежных распределенных систем.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "grpc-introduction",
+      "title": "Введение в gRPC и Protocol Buffers",
+      "date": "2025-10-15",
+      "dateFormatted": "15 октября 2025",
+      "categories": ["Go", "gRPC"],
+      "tags": ["grpc", "protobuf", "api"],
+      "excerpt": "Как начать работать с gRPC в Go. Описываем сервисы в .proto файлах и генерируем код для клиента и сервера.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "postgres-performance",
+      "title": "Оптимизация запросов в PostgreSQL",
+      "date": "2025-10-10",
+      "dateFormatted": "10 октября 2025",
+      "categories": ["Database", "Performance"],
+      "tags": ["postgresql", "optimization", "indexes"],
+      "excerpt": "EXPLAIN ANALYZE, индексы, партиционирование и другие способы ускорить работу с PostgreSQL.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "kubernetes-basics",
+      "title": "Kubernetes для Go разработчиков",
+      "date": "2025-10-05",
+      "dateFormatted": "5 октября 2025",
+      "categories": ["DevOps", "Kubernetes"],
+      "tags": ["kubernetes", "k8s", "deployment"],
+      "excerpt": "Deployments, Services, ConfigMaps и Secrets - минимальный набор для деплоя Go приложения в Kubernetes.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "testing-in-go",
+      "title": "Тестирование в Go: от unit до integration",
+      "date": "2025-09-30",
+      "dateFormatted": "30 сентября 2025",
+      "categories": ["Go", "Testing"],
+      "tags": ["go", "testing", "mocks"],
+      "excerpt": "Table-driven tests, моки, testcontainers и другие инструменты для качественного тестирования Go приложений.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "monitoring-prometheus",
+      "title": "Мониторинг Go приложений с Prometheus",
+      "date": "2025-09-25",
+      "dateFormatted": "25 сентября 2025",
+      "categories": ["Monitoring", "Go"],
+      "tags": ["prometheus", "metrics", "monitoring"],
+      "excerpt": "Добавляем метрики в Go приложение, настраиваем Prometheus и строим дашборды в Grafana.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "rest-api-best-practices",
+      "title": "Best Practices для REST API",
+      "date": "2025-09-15",
+      "dateFormatted": "15 сентября 2025",
+      "categories": ["API", "Backend"],
+      "tags": ["rest", "api", "best-practices"],
+      "excerpt": "Версионирование, обработка ошибок, пагинация и другие практики построения хороших REST API.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "redis-caching",
+      "title": "Кэширование с Redis в Go",
+      "date": "2025-09-10",
+      "dateFormatted": "10 сентября 2025",
+      "categories": ["Go", "Performance"],
+      "tags": ["redis", "caching", "go"],
+      "excerpt": "Как использовать Redis для кэширования данных и ускорения работы Go приложений.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "jwt-authentication",
+      "title": "JWT аутентификация в Go",
+      "date": "2025-09-05",
+      "dateFormatted": "5 сентября 2025",
+      "categories": ["Go", "Security"],
+      "tags": ["jwt", "auth", "security"],
+      "excerpt": "Реализация аутентификации на основе JWT токенов. Access и refresh токены, лучшие практики безопасности.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "sql-vs-nosql",
+      "title": "SQL vs NoSQL: когда что использовать",
+      "date": "2025-08-30",
+      "dateFormatted": "30 августа 2025",
+      "categories": ["Database", "Architecture"],
+      "tags": ["sql", "nosql", "database"],
+      "excerpt": "Сравниваем реляционные и документоориентированные БД. Когда выбрать PostgreSQL, а когда MongoDB.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "ci-cd-gitlab",
+      "title": "Настройка CI/CD в GitLab",
+      "date": "2025-08-25",
+      "dateFormatted": "25 августа 2025",
+      "categories": ["DevOps", "CI/CD"],
+      "tags": ["gitlab", "ci-cd", "automation"],
+      "excerpt": "Пишем .gitlab-ci.yml для автоматической сборки, тестирования и деплоя Go приложений.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "graphql-intro",
+      "title": "Введение в GraphQL",
+      "date": "2025-08-20",
+      "dateFormatted": "20 августа 2025",
+      "categories": ["API", "GraphQL"],
+      "tags": ["graphql", "api"],
+      "excerpt": "Что такое GraphQL и чем он отличается от REST. Первый GraphQL сервер на Go с gqlgen.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "clean-architecture",
+      "title": "Clean Architecture в Go проектах",
+      "date": "2025-08-15",
+      "dateFormatted": "15 августа 2025",
+      "categories": ["Go", "Architecture"],
+      "tags": ["clean-architecture", "ddd", "go"],
+      "excerpt": "Как организовать код по принципам Clean Architecture. Слои приложения, зависимости, тестируемость.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "websockets-go",
+      "title": "WebSockets в Go: real-time коммуникация",
+      "date": "2025-08-10",
+      "dateFormatted": "10 августа 2025",
+      "categories": ["Go", "WebSockets"],
+      "tags": ["websockets", "realtime", "go"],
+      "excerpt": "Создаем чат-приложение с WebSockets. Работа с gorilla/websocket и broadcast сообщений.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "aws-lambda-go",
+      "title": "Serverless функции на Go с AWS Lambda",
+      "date": "2025-08-05",
+      "dateFormatted": "5 августа 2025",
+      "categories": ["Go", "AWS"],
+      "tags": ["aws", "lambda", "serverless"],
+      "excerpt": "Пишем и деплоим serverless функции на Go в AWS Lambda. API Gateway, DynamoDB, холодный старт.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "rabbitmq-go",
+      "title": "Асинхронная обработка задач с RabbitMQ",
+      "date": "2025-07-30",
+      "dateFormatted": "30 июля 2025",
+      "categories": ["Go", "MessageQueue"],
+      "tags": ["rabbitmq", "queue", "async"],
+      "excerpt": "Используем RabbitMQ для фоновой обработки задач. Publishers, consumers, routing и exchange.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "elasticsearch-go",
+      "title": "Полнотекстовый поиск с Elasticsearch",
+      "date": "2025-07-25",
+      "dateFormatted": "25 июля 2025",
+      "categories": ["Search", "Backend"],
+      "tags": ["elasticsearch", "search", "go"],
+      "excerpt": "Интегрируем Elasticsearch в Go приложение. Индексация, поиск, агрегации и релевантность.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "error-handling-go",
+      "title": "Обработка ошибок в Go: best practices",
+      "date": "2025-07-20",
+      "dateFormatted": "20 июля 2025",
+      "categories": ["Go", "Best Practices"],
+      "tags": ["go", "errors", "best-practices"],
+      "excerpt": "Wrap errors, кастомные типы ошибок, errors.Is/As и другие паттерны работы с ошибками в Go.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "rate-limiting",
+      "title": "Rate Limiting в API с помощью Redis",
+      "date": "2025-07-15",
+      "dateFormatted": "15 июля 2025",
+      "categories": ["API", "Security"],
+      "tags": ["rate-limiting", "redis", "api"],
+      "excerpt": "Защищаем API от злоупотреблений с помощью rate limiting. Sliding window и token bucket алгоритмы.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "otel-tracing",
+      "title": "Distributed tracing с OpenTelemetry",
+      "date": "2025-07-10",
+      "dateFormatted": "10 июля 2025",
+      "categories": ["Observability", "Go"],
+      "tags": ["opentelemetry", "tracing", "monitoring"],
+      "excerpt": "Добавляем distributed tracing в микросервисы с помощью OpenTelemetry и Jaeger.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "graceful-shutdown",
+      "title": "Graceful shutdown Go приложений",
+      "date": "2025-07-05",
+      "dateFormatted": "5 июля 2025",
+      "categories": ["Go", "Best Practices"],
+      "tags": ["go", "shutdown", "signals"],
+      "excerpt": "Корректное завершение работы приложения. Обработка сигналов, закрытие соединений, graceful timeout.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "dependency-injection",
+      "title": "Dependency Injection в Go",
+      "date": "2025-06-30",
+      "dateFormatted": "30 июня 2025",
+      "categories": ["Go", "Design Patterns"],
+      "tags": ["di", "go", "patterns"],
+      "excerpt": "DI без фреймворков и с фреймворками (wire, fx). Управление зависимостями и тестируемость кода.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "profiling-pprof",
+      "title": "Профилирование Go приложений с pprof",
+      "date": "2025-06-25",
+      "dateFormatted": "25 июня 2025",
+      "categories": ["Go", "Performance"],
+      "tags": ["pprof", "profiling", "performance"],
+      "excerpt": "CPU и memory профилирование с помощью pprof. Находим узкие места и оптимизируем код.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "event-driven-architecture",
+      "title": "Event-driven архитектура",
+      "date": "2025-06-20",
+      "dateFormatted": "20 июня 2025",
+      "categories": ["Architecture", "Patterns"],
+      "tags": ["event-driven", "architecture", "patterns"],
+      "excerpt": "Event sourcing, CQRS и другие паттерны event-driven систем. Когда использовать и с чем есть сложности.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "sql-migrations",
+      "title": "Миграции баз данных с golang-migrate",
+      "date": "2025-06-15",
+      "dateFormatted": "15 июня 2025",
+      "categories": ["Database", "Go"],
+      "tags": ["migrations", "database", "go"],
+      "excerpt": "Версионирование схемы БД. Создание, применение и откат миграций с помощью golang-migrate.",
+      "url": "posts/go-context.html"
+    },
+    {
+      "id": "hello-world",
+      "title": "Hello, world!",
+      "date": "2025-06-10",
+      "dateFormatted": "10 июня 2025",
+      "categories": ["General"],
+      "tags": ["intro", "blog"],
+      "excerpt": "Первый пост в блоге. Рассказываю о планах, темах которые буду освещать, и о том, почему решил начать вести блог.",
+      "url": "posts/hello-world.html"
+    }
+  ]
+}

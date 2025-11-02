@@ -26,31 +26,15 @@
             <p>Делюсь опытом, наблюдениями и решениями интересных задач</p>
         </section>
 
-        <section class="articles-grid">
-            <a href="posts/go-context.html" class="article-card">
-                <h2>Управление временем жизни задач в Go с context</h2>
-                <div class="article-meta">
-                    <span>2 ноября 2025</span>
-                </div>
-                <p>В Go пакет context помогает ограничить время выполнения и отменять операции. Рассмотрим практические примеры использования context для управления горутинами и таймаутами.</p>
-                <div class="article-tags">
-                    <span class="tag">go</span>
-                    <span class="tag">context</span>
-                    <span class="tag">concurrency</span>
-                </div>
-            </a>
+        <!-- Список статей -->
+        <section id="articles-container" class="articles-grid">
+            <!-- Статьи генерируются через JS -->
+            <div class="loading">Загрузка статей...</div>
+        </section>
 
-            <a href="posts/hello-world.html" class="article-card">
-                <h2>Hello, world!</h2>
-                <div class="article-meta">
-                    <span>2 ноября 2025</span>
-                </div>
-                <p>Первый пост в блоге. Рассказываю о планах, темах которые буду освещать, и о том, почему решил начать вести блог.</p>
-                <div class="article-tags">
-                    <span class="tag">intro</span>
-                    <span class="tag">blog</span>
-                </div>
-            </a>
+        <!-- Пагинация -->
+        <section id="pagination" class="pagination">
+            <!-- Генерируется через JS -->
         </section>
     </main>
 
@@ -59,6 +43,7 @@
         <p>Блог о разработке и технологиях</p>
     </footer>
 
+    <script src="assets/js/articles.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
