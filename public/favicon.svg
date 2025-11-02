@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#0d1117" rx="12"/>
+
+  <!-- Code brackets {} -->
+  <g fill="#58a6ff" stroke="#58a6ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left bracket { -->
+    <path d="M 20 16 Q 16 16 16 20 L 16 26 Q 16 30 12 30 Q 16 30 16 34 L 16 40 Q 16 44 20 44"/>
+
+    <!-- Right bracket } -->
+    <path d="M 44 16 Q 48 16 48 20 L 48 26 Q 48 30 52 30 Q 48 30 48 34 L 48 40 Q 48 44 44 44"/>
+  </g>
+</svg>
