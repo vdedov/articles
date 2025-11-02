@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Как получить access token и использовать Threads API: пошаговое руководство с примерами на Python и Jupyter Notebook.">
+    <meta name="author" content="Владислав Дедов">
+    <title>Как получить access token и использовать Threads API — Пишу про IT</title>
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+<div id="header-container"></div>
+
+<main>
+    <div id="back-link-container"></div>
+
+    <article>
+        <header>
+            <h1>Как получить access token и использовать Threads API</h1>
+            <div class="article-meta">
+                <span>2 ноября 2025</span>
+                <span>•</span>
+                <span>Meta, Threads, API, Python</span>
+            </div>
+            <div class="article-tags">
+                <span class="tag">meta</span>
+                <span class="tag">threads</span>
+                <span class="tag">api</span>
+                <span class="tag">python</span>
+                <span class="tag">oauth</span>
+            </div>
+        </header>
+
+        <div class="article-content">
+            <p><strong>Во-первых, нужен аккаунт на facebook.com.</strong></p>
+
+            <p>После того как убедитесь, что аккаунт активен и вы можете получать уведомления на почту/телефон для подтверждения действий, переходите дальше.</p>
+
+            <p>Вам понадобится сайт разработчиков: <a href="https://developers.facebook.com/" target="_blank" rel="noopener">developers.facebook.com</a>.</p>
+
+            <p>Перейдите на сайт. Если вы ещё не регистрировались, в правом верхнем углу будет возможность создать аккаунт разработчика.</p>
+
+            <p>Если получилось зарегистрироваться — поздравляю! Большое дело сделано. Продолжим.</p>
+
+            <h2>Создание приложения</h2>
+            <p>Далее необходимо создать приложение. Для этого откройте аккаунт разработчика и нажмите кнопку <strong>«Создать приложение»</strong>.</p>
+            <img src="../assets/img/meta-api/4.png" alt="Создание приложения" loading="lazy">
+            <ul>
+                <li>На первом шаге укажите <strong>название приложения</strong>.</li>
+                <li>Если не подтянулась <strong>электронная почта</strong>, добавьте её вручную.</li>
+                <li>На шаге <strong>«Сценарии использования»</strong> выберите <strong>«Доступ к Threads API»</strong> (на момент написания статьи этот сценарий находится в «Популярном»).</li>
+                <li>На шаге <strong>«Компания»</strong> выберите, что <strong>ничего подключать не хотите</strong>.</li>
+                <li>Шаг с <strong>требованиями</strong> также <strong>пропустите</strong>.</li>
+                <li>Последний шаг — <strong>превью</strong>. Нажмите <strong>«Открыть панель»</strong> (админка может попросить пароль от аккаунта).</li>
+            </ul>
+
+            <h2>Настройка приложения</h2>
+            <p>Для настройки приложения потребуется <strong>callback (вебхук)</strong>. Можно использовать сервис <a href="https://webhook.site/" target="_blank" rel="noopener">webhook.site</a>.</p>
+            <p>Перейдите по ссылке — будет создан временный вебхук, который скоро понадобится.</p>
+
+            <p>Вернёмся в админку. В дашборде найдите вкладку <strong>«Сценарии использования»</strong>, перейдите в неё, нажмите <strong>«Настроить»</strong> приложение и убедитесь, что выбран подтаб <strong>«Разрешения и функции»</strong>. <strong>Добавьте все сценарии</strong> (их около 10).</p>
+            <img src="../assets/img/meta-api/2.png" alt="Сценарии использования" loading="lazy">
+            <p>Затем перейдите в подтаб <strong>«Настройки»</strong>, укажите URL вебхука в поле <em>Callback URL</em> и <strong>сохраните</strong>.</p>
+            <img src="../assets/img/meta-api/3.png" alt="Добавление callback" loading="lazy">
+            <p>Теперь в левом меню откройте <strong>«Роли в приложении»</strong> → <strong>«Роли»</strong>. Нужно добавить пользователя с ролью <strong>«Тестировщик Threads»</strong> (кнопка <strong>«Добавить…»</strong>). После выбора нужной радиокнопки появится поле поиска аккаунта — введите <strong>ник (username) в Threads</strong>. Найдите нужную учётную запись и добавьте.</p>
+
+            <p>После добавления статус будет <strong>«На рассмотрении»</strong>. Зайдите в веб-версию Threads → <strong>«Настройки»</strong> → <strong>«Аккаунт»</strong> → <strong>«Разрешения сайта»</strong> → <strong>«Приглашения»</strong> и <strong>примите приглашение</strong> от вашего приложения (может прийти не сразу).</p>
+            <img src="../assets/img/meta-api/1.png" alt="Добавление тестового пользователя" loading="lazy">
+            <p><strong>Готово.</strong> Основная часть выполнена. Пора получать <strong>access token</strong> и делать тестовый запрос.</p>
+
+            <p>Перед этим в админке Meta откройте страницу <strong>«Настройки приложения» → «Основное»</strong> и сохраните где-нибудь <strong>ID приложения Threads</strong> и <strong>секрет приложения</strong> — они скоро понадобятся.</p>
+
+            <p>Не забудьте держать под рукой и <strong>ссылку вебхука</strong> (ту, что сгенерировал webhook.site).</p>
+
+            <h2>Работа через Jupyter Notebook и Python</h2>
+            <p>Для удобства используем <strong>Jupyter Notebook + Python</strong>. Если ещё не установлены — установите с официальных сайтов.</p>
+            <p><strong>Откройте Jupyter</strong> и последовательно выполните шаги ниже.</p>
+
+            <h3>Базовые переменные</h3>
+            <pre><code class="language-python">import requests
+import json
+
+client_id     = '' # заполни значением ID приложения Threads
+client_secret = '' # заполни значением секрет приложения Threads
+redirect_uri  = '' # заполни значением ссылки из webhook.site
+scope         = 'threads_basic,threads_content_publish,threads_delete,threads_keyword_search,threads_location_tagging,threads_manage_insights,threads_manage_mentions,threads_manage_replies,threads_profile_discovery,threads_read_replies'</code></pre>
+
+            <h3>Формирование ссылки для OAuth-авторизации</h3>
+            <pre><code class="language-python">from urllib.parse import quote
+
+authorize_url = (
+    f"https://threads.net/oauth/authorize"
+    f"?client_id={client_id}"
+    f"&redirect_uri={redirect_uri}"
+    f"&scope={quote(scope)}"
+    f"&response_type=code"
+)
+authorize_url</code></pre>
+
+            <p>Результатом будет длинная ссылка. Перейдите по ней — откроется браузер и произойдёт редирект на страницу авторизации, где нужно нажать <strong>«Продолжить как …»</strong>.</p>
+
+            <p>Не закрывая вкладку, <strong>скопируйте URL</strong>, на который вас вернуло, и вставьте ниже в переменную <code>returned_url</code>.</p>
+
+            <h3>Получение <code>code</code> из возвращённого URL</h3>
+            <pre><code class="language-python">returned_url = ''
+code = returned_url.replace(app_uri + '?code=', '').replace('#_', '')</code></pre>
+
+            <h3>Обмен <code>code</code> на <code>access_token</code></h3>
+            <pre><code class="language-python">access_token_url = f'https://graph.threads.net/oauth/access_token'
+access_token_data = {
+    'client_id': client_id,
+    'client_secret': client_secret,
+    'grant_type': 'authorization_code',
+    'redirect_uri': redirect_uri,
+    'code': code
+}
+access_token_resp = requests.post(access_token_url, data=access_token_data)
+access_token = access_token_resp.json()['access_token']</code></pre>
+
+            <p>Если всё выполнено корректно, следующие блоки будут работать с API.</p>
+
+            <h3>Получение ID пользователя</h3>
+            <pre><code class="language-python">me_url = f'https://graph.threads.net/v1.0/me?fields=id,username,name,threads_profile_picture_url,threads_biography,is_verified&access_token={access_token}'
+me_resp = requests.get(me_url)
+me_resp_json = me_resp.json()</code></pre>
+
+            <h3>Пример: статистика из вкладки Insights</h3>
+            <pre><code class="language-python">import pprint
+
+threads_insights_url = f'https://graph.threads.net/v1.0/{me_resp_json['id']}/threads_insights?metric=likes&access_token={access_token}'
+threads_insights_resp = requests.get(threads_insights_url)
+threads_insights_resp_json = threads_insights_resp.json()
+
+pprint.pprint(threads_insights_resp_json)</code></pre>
+
+            <p>Если результат похож на следующий — это успех:</p>
+            <pre><code class="language-json">{
+  "data": [
+    {
+      "id": ".../insights/likes/day",
+      "name": "likes",
+      "period": "day",
+      "total_value": { "value": 19 }
+    }
+  ]
+}</code></pre>
+
+            <hr>
+
+            <h2>Полезные ссылки</h2>
+            <ul>
+                <li><a href="https://developers.facebook.com/" target="_blank" rel="noopener">Meta for Developers</a></li>
+                <li><a href="https://developers.facebook.com/docs/" target="_blank" rel="noopener">Документация Meta</a></li>
+                <li><a href="https://developers.facebook.com/docs/threads" target="_blank" rel="noopener">Threads API (обзор)</a></li>
+                <li><a href="https://developers.facebook.com/docs/graph-api/overview" target="_blank" rel="noopener">Graph API — обзор</a></li>
+                <li><a href="https://www.python.org/doc/" target="_blank" rel="noopener">Документация Python</a></li>
+                <li><a href="https://jupyter.org/" target="_blank" rel="noopener">Jupyter</a></li>
+            </ul>
+
+            <h2>Важно</h2>
+            <ul>
+                <li>Проверяйте соответствие <code>redirect_uri</code> в настройках приложения и в запросе обмена токена.</li>
+                <li>Храните секреты вне репозитория (переменные окружения, секрет-хранилище и т. п.).</li>
+                <li>Обрабатывайте ошибки (<code>raise_for_status()</code>) и логируйте ответы API.</li>
+            </ul>
+
+            <h2>Заключение</h2>
+            <p>В статье показано, как подготовить аккаунт разработчика, создать приложение, настроить callback (webhook), получить <code>access_token</code> и выполнить первые запросы к Threads API с помощью Python и Jupyter Notebook.</p>
+        </div>
+    </article>
+</main>
+
+<div id="footer-container"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="../assets/js/components.js"></script>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

@@ -1,30 +1,4 @@
-// Mobile menu toggle
 document.addEventListener('DOMContentLoaded', () => {
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-      const isExpanded = navLinks.classList.contains('active');
-      mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
-      mobileMenuBtn.textContent = isExpanded ? '✕' : '☰';
-    });
-  }
-
-  // Highlight active navigation link
-  const currentPath = window.location.pathname;
-  const navLinkElements = document.querySelectorAll('.nav-links a');
-
-  navLinkElements.forEach(link => {
-    const linkPath = new URL(link.href).pathname;
-    if (currentPath === linkPath ||
-        (currentPath.includes('/posts/') && linkPath.includes('index.html')) ||
-        (currentPath.endsWith('/') && linkPath.includes('index.html') && currentPath === linkPath.replace('index.html', ''))) {
-      link.classList.add('active');
-    }
-  });
-
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
