@@ -29,6 +29,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-archives
 
 # Подключение темы как remote_theme
 remote_theme: cotes2020/jekyll-theme-chirpy
