@@ -31,8 +31,7 @@ jobs:
         run: |
           gem install bundler
           bundle init
-          bundle add jekyll jekyll-remote-theme jekyll-seo-tag jekyll-sitemap jekyll-feed kramdown-parser-gfm
-          # Локальная сборка сайта в _site
+          bundle add jekyll jekyll-remote-theme jekyll-seo-tag jekyll-sitemap jekyll-feed kramdown-parser-gfm jekyll-paginate
           bundle exec jekyll build --trace
 
       - name: Upload artifact
