@@ -22,17 +22,18 @@ collections:
     output: true
     permalink: /:name/
 
-# Плагины, совместимые с GitHub Pages и/или локальным предпросмотром
+title: Пишу про IT
+lang: ru
+timezone: Europe/Berlin
+
+theme: jekyll-theme-chirpy
 plugins:
-  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-paginate
   - jekyll-archives
-
-# Подключение темы как remote_theme
-remote_theme: cotes2020/jekyll-theme-chirpy
+  - jekyll-include-cache
 
 # Метаданные автора (для карточек, футера и SEO)
 author:
