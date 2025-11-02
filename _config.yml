@@ -20,3 +20,5 @@ header_pages:
 
 # Настройки футера
 show_excerpts: true
+paginate: 5
+paginate_path: "/page:num/"
