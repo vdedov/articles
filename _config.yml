@@ -1,25 +1,59 @@
 title: Пишу про IT
 description: Статьи о разработке и технологиях
+timezone: Europe/Berlin
 
-# theme: minima
-# remote_theme: daattali/beautiful-jekyll
-# plugins:
-#   - jekyll-remote-theme
-# remote_theme: daattali/beautiful-jekyll
-remote_theme: mmistakes/minimal-mistakes
+# ВАЖНО: укажите корректно url/baseurl для ссылок и метаданных
+url: "https://vdedov.github.io"
+baseurl: ""                # для персонального сайта оставьте пустым
+# baseurl: "/your-blog"    # если это проектный сайт в подкаталоге
+
+# Chirpy: режим темы (auto | light | dark)
+theme_mode: dark
+
+# Подсветка кода (Rouge)
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+# Навигационные вкладки берутся из папки _tabs/
+collections:
+  tabs:
+    output: true
+    permalink: /:name/
+
+# Плагины, совместимые с GitHub Pages и/или локальным предпросмотром
 plugins:
   - jekyll-remote-theme
-  - jekyll-include-cache
-  
-author: Vladislav Dedov
-lang: ru
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
-# Включаем меню навигации
-header_pages:
-  - index.md
-  - about.md
+# Подключение темы как remote_theme
+remote_theme: cotes2020/jekyll-theme-chirpy
 
-# Настройки футера
-show_excerpts: true
+# Метаданные автора (для карточек, футера и SEO)
+author:
+  name: Владислав Дедов
+  bio: Разработчик Go. Пишу про инженерные практики, производительность и инфраструктуру.
+  avatar: /assets/img/screenshot.png  # можно указать свой аватар
+
+# Социальные ссылки (по желанию)
+# social:
+#   github: <ваш-логин>
+#   rss: /feed.xml
+
+# Генерация ленты
 paginate: 5
 paginate_path: "/page:num/"
+
+# Индексация (по желанию)
+jekyll_seo_tag:
+  type: Blog
+
+# Карта сайта
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: post
