@@ -4,8 +4,8 @@ timezone: Europe/Berlin
 lang: ru
 
 # ВАЖНО: укажите корректно url/baseurl для ссылок и метаданных
-url: "https://vdedov.github.io"
-baseurl: ""                # для персонального сайта оставьте пустым
+# url: "https://vdedov.github.io"
+# baseurl: ""                # для персонального сайта оставьте пустым
 # baseurl: "/your-blog"    # если это проектный сайт в подкаталоге
 
 theme: minima
@@ -16,7 +16,7 @@ author:
   bio: Golang hазработчик. Пишу про инженерные практики, производительность и инфраструктуру.
   avatar: /assets/img/screenshot.png  # можно указать свой аватар
 
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
+# markdown: kramdown
+# highlighter: rouge
+# kramdown:
+#   input: GFM
