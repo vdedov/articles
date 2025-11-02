@@ -28,6 +28,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-paginate
 
 # Подключение темы как remote_theme
 remote_theme: cotes2020/jekyll-theme-chirpy
