@@ -1,39 +1,14 @@
 title: Пишу про IT
 description: Статьи о разработке и технологиях
 timezone: Europe/Berlin
+lang: ru
 
 # ВАЖНО: укажите корректно url/baseurl для ссылок и метаданных
 url: "https://vdedov.github.io"
 baseurl: ""                # для персонального сайта оставьте пустым
 # baseurl: "/your-blog"    # если это проектный сайт в подкаталоге
 
-# Chirpy: режим темы (auto | light | dark)
-theme_mode: dark
-
-# Подсветка кода (Rouge)
-markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-
-# Навигационные вкладки берутся из папки _tabs/
-collections:
-  tabs:
-    output: true
-    permalink: /:name/
-
-title: Пишу про IT
-lang: ru
-timezone: Europe/Berlin
-
-theme: jekyll-theme-chirpy
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
-  - jekyll-archives
-  - jekyll-include-cache
+theme: jekyll-theme-midnight
 
 # Метаданные автора (для карточек, футера и SEO)
 author:
@@ -41,22 +16,7 @@ author:
   bio: Golang hазработчик. Пишу про инженерные практики, производительность и инфраструктуру.
   avatar: /assets/img/screenshot.png  # можно указать свой аватар
 
-# Социальные ссылки (по желанию)
-# social:
-#   github: <ваш-логин>
-#   rss: /feed.xml
-
-# Генерация ленты
-paginate: 5
-paginate_path: "/page:num/"
-
-# Индексация (по желанию)
-jekyll_seo_tag:
-  type: Blog
-
-# Карта сайта
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: post
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
