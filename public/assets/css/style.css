@@ -302,7 +302,7 @@ article h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 1.25rem;
+  padding: 0.5rem 1rem;
   background-color: var(--bg-tertiary);
   border-bottom: 1px solid var(--border-color);
 }
@@ -704,6 +704,8 @@ footer a:hover {
   font-size: 0.95rem;
   transition: all 0.3s ease;
   min-width: 44px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .pagination-btn:hover:not(:disabled) {
@@ -760,7 +762,7 @@ footer a:hover {
   background-color: var(--accent-hover);
 }
 
-/* Mobile adjustments for categories tree */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .category-header {
     padding: 1rem;
@@ -783,8 +785,29 @@ footer a:hover {
   }
 
   .pagination-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.8rem;
+    min-width: 36px;
+  }
+
+  .code-header {
     padding: 0.4rem 0.75rem;
-    font-size: 0.85rem;
-    min-width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 0.2rem;
+  }
+
+  .pagination-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+    min-width: 32px;
+  }
+
+  .pagination-dots {
+    padding: 0 0.25rem;
+    font-size: 0.75rem;
   }
 }
