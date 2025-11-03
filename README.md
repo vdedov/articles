@@ -11,6 +11,9 @@
 - Поддержка различных элементов: код, цитаты, изображения, ссылки
 - Чистый HTML/CSS/JS без зависимостей от генераторов статических сайтов
 - Автоматический деплой на GitHub Pages через GitHub Actions
+- **Поддержка Open Graph и Twitter Card** для красивых превью в соцсетях
+- **PWA поддержка** с web manifest
+- **Полный набор favicon** для всех платформ (SVG, ICO, PNG, Apple Touch Icon)
 
 ## Структура проекта
 
@@ -243,6 +246,34 @@ git push
 
 Обновите секцию `.contact-links` в файле `public/about.html`
 
+## Favicon и иконки
+
+В проекте используется полный набор иконок для всех платформ:
+
+- `favicon.svg` - современный SVG favicon
+- `favicon.ico` - классический ICO для старых браузеров
+- `favicon-16x16.png`, `favicon-32x32.png` - PNG иконки
+- `apple-touch-icon.png` - иконка для iOS устройств
+- `android-chrome-192x192.png`, `android-chrome-512x512.png` - иконки для Android
+- `og-image.png` - изображение для Open Graph (соцсети)
+- `site.webmanifest` - манифест для PWA
+
+### Генерация иконок из SVG
+
+Если вы хотите изменить иконку, отредактируйте `public/favicon.svg` и запустите скрипт:
+
+```bash
+# Установите зависимости (один раз)
+python3 -m venv venv
+source venv/bin/activate
+pip install cairosvg pillow
+
+# Сгенерируйте все иконки
+python generate_favicons.py
+```
+
+Скрипт автоматически создаст все необходимые форматы и размеры.
+
 ## Технологии
 
 - HTML5
@@ -250,6 +281,8 @@ git push
 - Vanilla JavaScript
 - highlight.js для подсветки синтаксиса
 - GitHub Actions для автоматического деплоя
+- Open Graph и Twitter Card для соцсетей
+- Web Manifest для PWA поддержки
 
 ## Лицензия
 
