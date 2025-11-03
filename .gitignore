@@ -15,3 +15,13 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.bak
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Claude
+.claude/settings.local.json
